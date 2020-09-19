@@ -13,3 +13,14 @@ window.addEventListener('load', () => {
   securetype.addEventListener('change', updateWifi);
   password.addEventListener('input', updateWifi);
 });
+
+if ('serviceWorker' in navigator) {
+  (async () => {
+    try {
+      const regist = await navigator.serviceWorker.register('sw.js');
+      console.log(`ServiceWorker registration success(scope: ${regist.scope})`);
+    } catch (err) {
+      console.log(`ServiceWorker registration failure(${err})`);
+    }
+  })();
+}
