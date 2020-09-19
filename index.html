@@ -6,45 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>QRcode generator</title>
-  <style>
-    body {
-      margin: 0;
-      line-height: 1.5;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    label {
-      display: inline-block;
-      min-width: 128px;
-      text-align: right;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    #qrcode:before {
-      content: attr(title);
-      display: block;
-    }
-
-    #qrcode>img {
-      margin: 0 auto 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
   <script src="qrcode.js"></script>
-  <script>
-    window.addEventListener('load', function () {
-      const qrcode = new QRCode("qrcode", {text: text.value});
-      text.addEventListener('input', _ => qrcode.makeCode(text.value));
-      wifi.addEventListener('click', () => {
-        text.value = wifi.textContent;
-        qrcode.makeCode(text.value);
-      });
-      ssid.addEventListener('input', () => wifi.textContent = `WIFI:S:${ssid.value};T:${securetype.value};P:${password.value};;`)
-      securetype.addEventListener('change', () => wifi.textContent = `WIFI:S:${ssid.value};T:${securetype.value};P:${password.value};;`)
-      password.addEventListener('input', () => wifi.textContent = `WIFI:S:${ssid.value};T:${securetype.value};P:${password.value};;`)
-    });
-  </script>
+  <script src="main.js"></script>
 </head>
 
 <body>

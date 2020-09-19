@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 18px;
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  min-width: 128px;
+  text-align: right;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+#qrcode:before {
+  content: attr(title);
+  display: block;
+}
+
+#qrcode>img {
+  margin: 0 auto 8px;
+}
